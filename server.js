@@ -1,12 +1,12 @@
 const dbConnection = require("./config/database");
 const app = require("./index");
-
+require('dotenv').config();
 
 app.listen(process.env.PORT, async ()=>{
     try{
         await dbConnection;
         console.log("Database connected successfully");
-        console.log(`Server is successfully running on PORT ${process.env.PORT}`);
+        console.log(`Server is successfully running on PORT ${process.env.PORT} `);
     }
     catch(error){
         console.log("Database not connected");
